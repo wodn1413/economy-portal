@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>주요 뉴스 · 경제플러스 +지식IN</title>
+<meta name="description" content="주요 경제 뉴스와 해설, 삼성전자·SK하이닉스 시황, 날짜별 리서치 자료를 한곳에서.">
+<meta property="og:title" content="주요 뉴스 · 경제플러스 +지식IN"><meta property="og:image" content="/assets/og-image.svg">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.dataset.theme="light";try{if(localStorage.getItem("economy-theme")==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/config.js"></script><script src="/js/data.js"></script>
+</head><body data-page="news">
+<main id="main" class="wrap">
+<section class="section" id="news-stream"><div class="section-heading"><div><span class="eyebrow">NEWSROOM</span><h2>주요 뉴스</h2><p>경제 · 글로벌 · 정치 · 사회 (네이버 뉴스 검색 + 자체 해설)</p></div></div>
+<div class="search-row"><input id="feed-search-input" type="search" placeholder="뉴스·종목 검색" aria-label="뉴스 검색"></div>
+<div class="glass-card filter-bar"><button data-nc="전체" onclick="switchCategory(&#39;전체&#39;)">전체</button><button data-nc="경제·증시" onclick="switchCategory(&#39;경제·증시&#39;)">경제·증시</button><button data-nc="글로벌" onclick="switchCategory(&#39;글로벌&#39;)">글로벌</button><button data-nc="정치" onclick="switchCategory(&#39;정치&#39;)">정치</button><button data-nc="사회이슈" onclick="switchCategory(&#39;사회이슈&#39;)">사회이슈</button><button data-nc="핫토픽" onclick="switchCategory(&#39;핫토픽&#39;)">핫토픽</button><button data-nc="스크랩" onclick="switchCategory(&#39;스크랩&#39;)">스크랩</button></div>
+<p id="news-status" class="status-line"></p><div class="glass-card feed" id="news-container"></div></section>
+</main>
+<script src="/js/layout.js"></script><script src="/js/app.js"></script><script src="/js/naver-feed.js"></script><script src="/js/member-auth.js"></script><script src="/js/kakao.js"></script><script src="/js/community.js"></script>
+</body></html>

@@ -1,0 +1,35 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# 깔끔한 주소(/news → /news.html)
+[[redirects]]
+  from = "/hot-topics"
+  to = "/hot-topics.html"
+  status = 200
+[[redirects]]
+  from = "/research"
+  to = "/research.html"
+  status = 200
+[[redirects]]
+  from = "/news"
+  to = "/news.html"
+  status = 200
+[[redirects]]
+  from = "/library"
+  to = "/library.html"
+  status = 200
+[[redirects]]
+  from = "/calendar"
+  to = "/calendar.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    X-Frame-Options = "DENY"

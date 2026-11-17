@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>경제플러스 +지식IN</title>
+<meta name="description" content="주요 경제 뉴스와 해설, 삼성전자·SK하이닉스 시황, 날짜별 리서치 자료를 한곳에서.">
+<meta property="og:title" content="경제플러스 +지식IN"><meta property="og:image" content="/assets/og-image.svg">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.dataset.theme="light";try{if(localStorage.getItem("economy-theme")==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
+<link rel="stylesheet" href="/css/site.css">
+<script src="/js/config.js"></script><script src="/js/data.js"></script>
+</head><body data-page="home">
+<main id="main" class="wrap">
+<h1 class="sr-only">경제플러스 +지식IN 주요 일정과 뉴스</h1>
+<section class="section" id="home-library"><div class="section-heading"><div><span class="eyebrow">LIBRARY</span><h2>투자를 읽는 자료실</h2><p>기업의 숫자부터 내 판단의 기록까지.</p></div><a class="link-more" href="/library">전체 자료 ↗</a></div><div id="home-materials-container" class="grid grid-3"></div></section>
+<section class="section glass-card" id="major-schedule" style="padding:22px"><div class="section-heading"><h2>주요 일정</h2><a class="link-more" href="/calendar">전체 달력 ↗</a></div><div class="agenda"><div id="home-calendar" class="mini-cal" aria-label="주요 일정 달력"></div><div><h3 style="margin:0 0 6px;font-size:14px">다가오는 일정</h3><div id="upcoming-events"></div></div></div></section>
+<section class="section" id="community" aria-label="회원 현황과 이벤트"></section>
+<section class="section" id="hot-topic-lead"><div class="section-heading"><h2>🔥 오늘의 핫토픽</h2><a class="link-more" href="/hot-topics">핫토픽 더보기 +</a></div><div id="lead-story" class="glass-card lead"></div><p id="update-status" class="status-line"></p></section>
+<section class="section"><div class="home-layout">
+  <div>
+    <div class="glass-card filter-bar" id="timeline-filter-bar">
+      <button data-f="전체" onclick="studioFilterNews(&#39;전체&#39;)">전체 속보</button><button data-f="핫토픽" onclick="studioFilterNews(&#39;핫토픽&#39;)">🔥 핫토픽</button><button data-f="반도체" onclick="studioFilterNews(&#39;반도체&#39;)">⚡ 삼전·하이닉스</button><button data-f="경제·증시" onclick="studioFilterNews(&#39;경제·증시&#39;)">📈 경제·증시</button><button data-f="정치" onclick="studioFilterNews(&#39;정치&#39;)">정치·정책</button><button data-f="사회이슈" onclick="studioFilterNews(&#39;사회이슈&#39;)">사회</button><button data-f="글로벌" onclick="studioFilterNews(&#39;글로벌&#39;)">🌐 글로벌</button>
+      <a class="link-more" style="margin-left:auto;align-self:center" href="/news?search=1">뉴스·종목 검색 ↗</a></div>
+    <p id="news-status" class="status-line"></p>
+    <div class="glass-card feed" id="live-feed"><div id="studio-feed"></div><button id="studio-more" class="btn btn-ghost btn-block" style="margin-top:14px" onclick="studioMoreNews()">뉴스 더보기 +</button></div>
+  </div>
+  <aside style="display:grid;gap:16px;align-content:start">
+    <div class="glass-card widget widget-emerald"><span class="pill" style="color:#047857">시장 브리핑</span><h4>오늘 시황과 종목 리서치</h4><p>미국장과 국내 수급, 주요 뉴스와 가격 기준을 정리한 <strong>날짜별 시황·후보 설명서</strong>를 확인하세요.</p><a class="btn btn-block" style="background:#059669" href="/research">시황·리서치 보기 →</a></div>
+    <div class="glass-card widget"><div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px"><strong style="font-size:14px">🔴 주요 뉴스 · 이슈</strong><span class="eyebrow">HOT 5</span></div><div class="ranking" id="studio-ranking"></div></div>
+    <div class="glass-card widget widget-dark"><span class="pill">MEMBER ARCHIVE</span><h4>코스피 20000의 시대</h4><p>전자책과 보조지표·사용법, 매수매도 타점 체크리스트를 한곳에서 확인하세요.</p><button class="btn btn-block" onclick="openMaterialsPage()">자료실 전체 보기 →</button></div>
+    <div class="glass-card widget" id="semiconductor-radar"><span class="eyebrow">삼전 · 하이닉스</span><h4 style="margin-top:4px">반도체 마켓 리모컨</h4><div class="remote-tabs"><button data-stock="0" onclick="selectRadar(0)" aria-pressed="true">삼성전자</button><button data-stock="1" onclick="selectRadar(1)" aria-pressed="false">SK하이닉스</button></div><div id="radar-cards"></div></div>
+  </aside>
+</div></section>
+<section class="section" id="latest-research"><div class="section-heading"><h2>시황 · 리서치</h2><a class="link-more" href="/research">날짜별 전체 보기 ↗</a></div><div id="latest-research-list" class="grid grid-2"></div></section>
+<section class="section" id="news-overview"><div class="section-heading"><div><span class="eyebrow">NEWSROOM</span><h2>분야별 뉴스 한눈에</h2></div><a class="link-more" href="/news">전체 뉴스 ↗</a></div><div id="home-news-grid" class="grid grid-2"></div></section>
+</main>
+<script src="/js/layout.js"></script><script src="/js/app.js"></script><script src="/js/naver-feed.js"></script><script src="/js/member-auth.js"></script><script src="/js/kakao.js"></script><script src="/js/community.js"></script>
+</body></html>
